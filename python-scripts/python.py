@@ -8,7 +8,7 @@ import RPi.GPIO as GPIO
 import time
 
 gpioPin = int(sys.argv[1])
-onPulse = float(sys.argv[2])
+pulse   = float(sys.argv[2])
 
 # Disable GPIO warnings
 GPIO.setwarnings(False)
@@ -20,8 +20,8 @@ GPIO.setmode(GPIO.BOARD)
 # Setup pins
 GPIO.setup(gpioPin, GPIO.OUT)
 
-pwm = GPIO.PWM(gpioPin,50)
-pwm.start(onPulse)
+pwm = GPIO.PWM(gpioPin, 50)
+pwm.start(pulse)
 time.sleep(1)
 
 GPIO.cleanup();

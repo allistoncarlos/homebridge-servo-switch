@@ -1,17 +1,19 @@
 {
-  "name": "homebridge-servo",
-  "version": "1.0.0",
-  "description": "Sample Platform plugin for homebridge: https://github.com/nfarina/homebridge",
+  "name": "homebridge-servo-switch",
+  "version": "1.0.2",
+  "description": "Control a Servo Motor through Homebridge as a switch",
   "license": "ISC",
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin",
+    "servo",
+    "motor"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/example/homebridge.git"
+    "url": "git@github.com:allistoncarlos/homebridge-servo-switch.git"
   },
   "bugs": {
-    "url": "http://github.com/example/homebridge/issues"
+    "url": "https://github.com/allistoncarlos/homebridge-servo-switch/issues"
   },
   "engines": {
     "node": ">=0.12.0",

@@ -112,11 +112,17 @@ ServoSwitch.prototype.getInitState = function (accessory) {
 
 // Method to set state
 ServoSwitch.prototype.setPowerState = function (thisSwitch, state, callback) {
+  console.log("Path: " + __dirname);
+
   var self = this;
 
   var tout = null;
 
   self.log("That's the state: " + state);
+
+  PythonShell.defaultOptions = {
+    scriptPath: __dirname + '/python-scripts',
+  };
 
   var options;
 
