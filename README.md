@@ -2,6 +2,8 @@
 Control a Servo Motor through Homebridge as a switch. Designed to use with RaspberryPi and [Homebridge](https://github.com/nfarina/homebridge/), it helps to transform a dumb lightswitch to a smart one. 
 Depends on [python-shell](https://github.com/extrabacon/python-shell) package.
 
+![](https://media.giphy.com/media/l3fzJbaGUsvmGRffG/giphy.gif)
+
 ### Installation
 ```sh
 $ sudo npm install -g homebridge-servo-switch
