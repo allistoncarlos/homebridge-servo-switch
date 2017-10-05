@@ -3,8 +3,9 @@
 
 const char* ssid = "your-network";
 const char* password = "your-password";
-const int off_State = -35;
-const int on_State = 35;
+const int off_State = 70;
+const int on_State = -70;
+const int pin = 2;
 
 // Create an instance of the server
 // specify the port to listen on as an argument
@@ -17,8 +18,9 @@ void setup() {
   Serial.begin(115200);
   delay(10);
 
-  servo.attach(2);          //D4
+  servo.attach(pin);          //D4
   servo.write(off_State);   // Put servo on OFF state
+  servo.detach();
   
   // Connect to WiFi network
   Serial.println();
@@ -66,11 +68,19 @@ void loop() {
   String result = "";
   
   if (req.indexOf("/switch/0") != -1) {
+    servo.attach(pin);
     servo.write(off_State);
+    delay(250);
+    servo.detach();
+    
     result = "off";
   }
   else if (req.indexOf("/switch/1") != -1) {
+    servo.attach(pin);
     servo.write(on_State);
+    delay(250);
+    servo.detach();
+    
     result = "on";
   }
   else if (req.indexOf("/switch/status") != -1) {
