@@ -6,6 +6,7 @@ const char* password = "your-password";
 const int off_State = 70;
 const int on_State = -70;
 const int pin = 2;
+const int LED = 2;
 
 // Create an instance of the server
 // specify the port to listen on as an argument
@@ -27,7 +28,8 @@ void setup() {
   Serial.println();
   Serial.print("Connecting to ");
   Serial.println(ssid);
-  
+
+  WiFi.mode(WIFI_STA); //We don't want the ESP to act as an AP
   WiFi.begin(ssid, password);
   
   while (WiFi.status() != WL_CONNECTED) {
@@ -44,6 +46,9 @@ void setup() {
 
   // Print the IP address
   Serial.println(WiFi.localIP());
+
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, HIGH);
 }
 
 void loop() {
@@ -91,6 +96,8 @@ void loop() {
     client.stop();
     return;
   }
+
+  digitalWrite(LED, HIGH);
   
   client.flush();
 
